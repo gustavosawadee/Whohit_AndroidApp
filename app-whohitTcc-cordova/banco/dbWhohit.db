@@ -1,0 +1,16 @@
+--
+-- File generated with SQLiteStudio v3.1.1 on seg jun 18 11:12:36 2018
+--
+-- Text encoding used: System
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: log_usuario
+CREATE TABLE log_usuario (idLog INT PRIMARY KEY NOT NULL, email VARCHAR (100) NOT NULL, senha VARCHAR (100) NOT NULL);
+
+-- Table: usuario
+CREATE TABLE usuario (id INT PRIMARY KEY, email VARCHAR (100) NOT NULL, senha VARCHAR (50) NOT NULL, nome VARCHAR (100) NOT NULL, data_nascimento DATE, cpf VARCHAR (100) UNIQUE NOT NULL, endereco VARCHAR (100) NOT NULL, bairro VARCHAR (100) NOT NULL, cidade VARCHAR (100) NOT NULL, estado VARCHAR (100) NOT NULL);
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
