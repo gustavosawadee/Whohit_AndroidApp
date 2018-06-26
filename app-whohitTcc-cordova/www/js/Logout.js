@@ -1,3 +1,3 @@
-$( "#btn-sair" ).click(function() {
- window.location.href = "index.html#pageLogin"; 
+$( "#btn-sair" ).click(function(reload) {
+ location.reload();
 });
