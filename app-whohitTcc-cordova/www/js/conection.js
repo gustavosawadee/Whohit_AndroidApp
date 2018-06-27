@@ -165,7 +165,7 @@ var App = {
 				tx.executeSql(uup);
 				document.getElementById('txtNome').value = nome;
 				document.getElementById('txtEmail').value = email;
-				document.getElementById('txtCep').value = email;
+				document.getElementById('txtCep').value = cep;
 				document.getElementById('txtEndereco').value = endereco;
 				document.getElementById('txtBairro').value = bairro;
 				document.getElementById('txtCidade').value = cidade;
