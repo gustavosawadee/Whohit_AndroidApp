@@ -58,10 +58,10 @@ var App = {
 			alert("Preenchimento de data de nascimento vazio");
 		}
 		else if(App.cpfTeste(document.getElementById('cpf').value)  == ""){
-			alert("Preenchimento de cpf inválido");
+			alert("Preenchimento de CPF inválido");
 		}
 		else if(document.getElementById('cep').value  == ""){
-			alert("Preenchimento de cep vazio");
+			alert("Preenchimento de CEP vazio");
 		}
 		else if(document.getElementById('endereco').value  == ""){
 			alert("Preenchimento de endereço vazio");
@@ -202,3 +202,4 @@ cpfTeste:function(cpf) {
 },
 }
 App.initialize();
+
