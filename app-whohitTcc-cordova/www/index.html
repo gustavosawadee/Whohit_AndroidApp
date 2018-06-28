@@ -84,46 +84,7 @@
     </script>
     <!-- fim do script teclado-->
     <!-- começo script estado e cidade-->
-    <script type="text/javascript">	
-		
-		$(document).ready(function () {
-		
-			$.getJSON('estados_cidades.json', function (data) {
-
-				var items = [];
-				var options = '<option value="">escolha um estado</option>';	
-
-				$.each(data, function (key, val) {
-					options += '<option value="' + val.nome + '">' + val.nome + '</option>';
-				});					
-				$("#estado").html(options);				
-				
-				$("#estado").change(function () {				
-				
-					var options_cidades = '';
-					var str = "";					
-					
-					$("#estado option:selected").each(function () {
-						str += $(this).text();
-					});
-					
-					$.each(data, function (key, val) {
-						if(val.nome == str) {							
-							$.each(val.cidade, function (key_city, val_city) {
-								options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
-							});							
-						}
-					});
-
-					$("#cidade").html(options_cidades);
-					
-				}).change();		
-			
-			});
-		
-		});
-		
-	</script>
+    
 	<!-- fim script estado e cidade-->
 
 	<script type="text/javascript" >
@@ -252,23 +213,22 @@
                     <i style="font-size:24px" class="fa">&#xf2c3;</i>
                     <input type="text" name="CPF" id="cpf" value="" placeholder="CPF">
                     <i class="material-icons">&#xe88a;</i>
-                    <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                    <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" placeholder="CEP" 
                		onblur="pesquisacep(this.value);" /></label><br />
                		<i class="material-icons">&#xe88a;</i>
                     <input type="text" name="endereco" id="endereco" value="" placeholder="Endereço">
                     <i class="material-icons">&#xe88a;</i>
                     <input type="text" name="bairro" id="bairro" value="" placeholder="Bairro">
                     <i class="material-icons">&#xe0c8;</i>
-                    <!--<input type="text" name="cidade" id="cidade" value="" placeholder="Cidade"required>-->	
-                    <!--<i class="material-icons">&#xe0c8;</i>-->
-                   	<!--<input type="text" name="estado" id="estado" value="" placeholder="Estado"required>-->
-            <select id="estado">
+                    <input type="text" name="cidade" id="cidade" value="" placeholder="Cidade"required>
+                    <i class="material-icons">&#xe0c8;</i>-->
+                   	<input type="text" name="estado" id="estado" value="" placeholder="Estado"required>
+           <!-- <select id="estado">
 				<option value="">Estado</option>
 			</select>
 			<i class="material-icons">&#xe0c8;</i>
 			<select id="cidade">
-				<option>Cidade</option>
-			</select>
+			</select>-->
 
 
                     <br>
