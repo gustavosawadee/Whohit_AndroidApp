@@ -20,7 +20,6 @@ var App = {
         this.db.transaction(function(tx){
 			
             tx.executeSql('CREATE TABLE IF NOT EXISTS usuario (email,senha,nome,data_nascimento,cpf unique,cep,endereco,bairro,cidade,estado)');
-           // tx.executeSql('CREATE TABLE IF NOT EXISTS raspIP(ip)');
         });
     },
     newLogin:function(){
@@ -93,14 +92,6 @@ var App = {
 					document.getElementById('txtEstado').value = result.rows[0].estado;
 					console.log(result);
 				});
-			//var addIP = 'INSERT INTO raspIP(ip) VALUES("' + document.getElementById('ip').value +'")';	
-				//	tx.executeSql(addIP);
-				//	tx.executeSql("select * from raspIP where ip = '" + document.getElementById('ip').value + "'", [], function(tx,result){
-					//document.getElementById('valor').value = result.rows[0].ip;
-				//	console.log(result);
-				//});
-				//$.mobile.changePage("#pageHome");
-			//});
 			$.mobile.changePage("#pageHome");
 		});
 		}
@@ -129,8 +120,6 @@ var App = {
 	updateValues:function(){
 		App.db.transaction(function (tx){
 			var nome, email,cep,endereco, bairro, cidade, estado;
-			//var update = "UPDATE usuario set nome = ?, email = ?,endereco = ?,bairro = ?,cidade = ?,estado = ?";
-			//tx.executeSql(update,[document.getElementById('nome').value,document.getElementById('email').value,document.getElementById('endereco').value,document.getElementById('bairro').value,document.getElementById('cidade').value,document.getElementById('estado').value]);
 			tx.executeSql("select * from usuario where email = '"+document.getElementById('loginUser').value+"'", [], function(tx, result){
 				var teste;
 				nome = result.rows[0].nome;
